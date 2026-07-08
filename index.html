@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Spice Route — Authentic Indian cuisine with a modern twist. Experience rich flavors, warm hospitality, and dishes crafted with passion. Order online or reserve your table today.">
+  <meta name="keywords" content="Indian restaurant, best restaurant in city, biryani, butter chicken, tandoori, order food online, Indian food near me">
+  <title>Spice Route — Authentic Taste. Modern Experience.</title>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Spice Route",
+    "image": "images/hero-food.png",
+    "servesCuisine": "Indian",
+    "priceRange": "₹₹",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ramnagar, Betim, Bardez",
+      "addressLocality": "North Goa",
+      "addressRegion": "Goa",
+      "postalCode": "",
+      "addressCountry": "IN"
+    },
+    "telephone": "7385693147",
+    "openingHours": ["Mo-Su 11:00-23:00"],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "reviewCount": "2400"
+    }
+  }
+  </script>
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍛</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">🍛</div>
+        <div class="nav-logo-text">Spice<span>Route</span></div>
+      </a>
+      
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="reservation.html" class="btn btn-primary btn-sm nav-cta">Reserve Table</a>
+      </div>
+      
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu -->
+  <div class="nav-mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="reservation.html">Reserve Table</a>
+    <a href="#" class="btn btn-whatsapp" onclick="orderWhatsApp()">💬 Order on WhatsApp</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="images/hero-food.png" alt="Authentic Indian cuisine spread" loading="eager">
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">⭐ Rated 4.6 on Google — 2400+ Reviews</div>
+        <h1 class="hero-title">
+          Authentic Taste.<br>
+          <span class="highlight">Modern Experience.</span>
+        </h1>
+        <p class="hero-description">
+          Where traditional Indian recipes meet contemporary dining. Every dish tells a story of spices, passion, and heritage — crafted to delight your senses.
+        </p>
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary btn-lg" onclick="orderWhatsApp()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Order Now
+          </a>
+          <a href="menu.html" class="btn btn-secondary btn-lg">
+            View Menu →
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-value">15+</div>
+            <div class="hero-stat-label">Years of Legacy</div>
+          </div>
+          <div>
+            <div class="hero-stat-value">200+</div>
+            <div class="hero-stat-label">Dishes Served</div>
+          </div>
+          <div>
+            <div class="hero-stat-value">50K+</div>
+            <div class="hero-stat-label">Happy Customers</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Menu Preview -->
+  <section class="section" id="menu-preview">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Our Specialties</div>
+        <h2 class="section-title">Dishes That Define Us</h2>
+        <p class="section-subtitle">Curated by our head chef, these signature dishes embody the soul of Indian cuisine — bold, aromatic, and unforgettable.</p>
+      </div>
+      
+      <div class="menu-preview-grid">
+        <!-- Card 1 -->
+        <div class="menu-card reveal">
+          <div class="menu-card-image">
+            <img src="images/butter-chicken.png" alt="Butter Chicken" loading="lazy">
+            <div class="menu-card-badge">
+              <span class="badge badge-bestseller">🔥 Bestseller</span>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-type"><div class="nonveg-icon"></div></div>
+            <h3 class="menu-card-name">Butter Chicken</h3>
+            <p class="menu-card-desc">Tender chicken in a rich, creamy tomato-butter sauce with aromatic spices. Our #1 dish for over 15 years.</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">₹399 <small>/ full</small></span>
+              <button class="btn btn-primary btn-sm" onclick="orderWhatsApp('Butter Chicken')">Order</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="menu-card reveal">
+          <div class="menu-card-image">
+            <img src="images/biryani.png" alt="Hyderabadi Biryani" loading="lazy">
+            <div class="menu-card-badge">
+              <span class="badge badge-bestseller">🔥 Bestseller</span>
+              <span class="badge badge-nonveg">Non-Veg</span>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-type"><div class="nonveg-icon"></div></div>
+            <h3 class="menu-card-name">Hyderabadi Dum Biryani</h3>
+            <p class="menu-card-desc">Slow-cooked basmati rice layered with succulent meat, saffron, and fried onions. Served with raita and mirchi ka salan.</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">₹449 <small>/ full</small></span>
+              <button class="btn btn-primary btn-sm" onclick="orderWhatsApp('Hyderabadi Biryani')">Order</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="menu-card reveal">
+          <div class="menu-card-image">
+            <img src="images/paneer-tikka.png" alt="Paneer Tikka" loading="lazy">
+            <div class="menu-card-badge">
+              <span class="badge badge-veg">Veg</span>
+              <span class="badge badge-bestseller">⭐ Chef's Pick</span>
+            </div>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-type"><div class="veg-icon"></div></div>
+            <h3 class="menu-card-name">Tandoori Paneer Tikka</h3>
+            <p class="menu-card-desc">Charcoal-grilled cottage cheese cubes marinated in yoghurt and tandoori spices. Served with mint chutney.</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">₹329 <small>/ plate</small></span>
+              <button class="btn btn-primary btn-sm" onclick="orderWhatsApp('Paneer Tikka')">Order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center" style="margin-top: var(--space-2xl);">
+        <a href="menu.html" class="btn btn-outline btn-lg">Explore Full Menu →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- USP / Highlights -->
+  <section class="section section-dark" id="highlights">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Why Choose Us</div>
+        <h2 class="section-title">The Spice Route Difference</h2>
+        <p class="section-subtitle">We don't just serve food — we craft experiences that bring families and friends together.</p>
+      </div>
+      
+      <div class="usp-grid">
+        <div class="usp-card reveal">
+          <div class="usp-icon">🌿</div>
+          <h3 class="usp-title">Farm-Fresh Ingredients</h3>
+          <p class="usp-desc">Every ingredient is sourced daily from local farms. No frozen, no stale — only the freshest produce touches our kitchen.</p>
+        </div>
+        <div class="usp-card reveal">
+          <div class="usp-icon">👨‍🍳</div>
+          <h3 class="usp-title">Master Chefs</h3>
+          <p class="usp-desc">Our chefs bring 25+ years of culinary expertise from the royal kitchens of Lucknow, Hyderabad, and Punjab.</p>
+        </div>
+        <div class="usp-card reveal">
+          <div class="usp-icon">⚡</div>
+          <h3 class="usp-title">Ready in 15 mins</h3>
+          <p class="usp-desc">No long waits. Our kitchen is optimized for speed without compromising on taste or quality. Dine-in or takeaway.</p>
+        </div>
+        <div class="usp-card reveal">
+          <div class="usp-icon">🛡️</div>
+          <h3 class="usp-title">Hygiene Certified</h3>
+          <p class="usp-desc">FSSAI certified kitchen with strict hygiene protocols. Your safety and health are our top priority.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Platforms -->
+  <section class="section section-cream" id="order">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Order Online</div>
+        <h2 class="section-title">Get Your Favorites Delivered</h2>
+        <p class="section-subtitle">Order through your preferred platform. We're everywhere you love to order from.</p>
+      </div>
+      
+      <div class="usp-grid" style="max-width: 900px; margin: 0 auto;">
+        <a href="#" class="usp-card reveal" style="background: #fff; cursor: pointer;" onclick="orderWhatsApp()">
+          <div class="usp-icon" style="font-size: 2.2rem;">💬</div>
+          <h3 class="usp-title" style="color: var(--color-charcoal);">WhatsApp Order</h3>
+          <p class="usp-desc" style="color: var(--color-text-muted);">Send your order directly. Quick, easy, and personal. Get instant confirmation.</p>
+          <span class="btn btn-whatsapp btn-sm" style="margin-top: var(--space-md);">Order Now</span>
+        </a>
+        <a href="#" class="usp-card reveal" style="background: #fff; cursor: pointer;">
+          <div class="usp-icon" style="font-size: 2.2rem;">🟠</div>
+          <h3 class="usp-title" style="color: var(--color-charcoal);">Swiggy</h3>
+          <p class="usp-desc" style="color: var(--color-text-muted);">Order via Swiggy for lightning-fast delivery right to your door.</p>
+          <span class="btn btn-outline btn-sm" style="margin-top: var(--space-md);">Open Swiggy →</span>
+        </a>
+        <a href="#" class="usp-card reveal" style="background: #fff; cursor: pointer;">
+          <div class="usp-icon" style="font-size: 2.2rem;">🔴</div>
+          <h3 class="usp-title" style="color: var(--color-charcoal);">Zomato</h3>
+          <p class="usp-desc" style="color: var(--color-text-muted);">Find us on Zomato. Read reviews, browse menu, and order seamlessly.</p>
+          <span class="btn btn-outline btn-sm" style="margin-top: var(--space-md);">Open Zomato →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Testimonials</div>
+        <h2 class="section-title">What Our Guests Say</h2>
+        <p class="section-subtitle">Don't take our word for it — hear from thousands of happy diners.</p>
+      </div>
+      
+      <div class="reviews-track">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"The butter chicken here is absolutely divine! Best I've had in Pune. The ambiance is perfect for family dinners. We keep coming back every weekend."</p>
+          <div class="review-author">
+            <div class="review-avatar">RP</div>
+            <div>
+              <div class="review-author-name">Rahul Patil</div>
+              <div class="review-author-source">Google Reviews</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Ordered via WhatsApp and food arrived piping hot! The biryani is authentic Hyderabadi style. Portions are generous and pricing is very fair."</p>
+          <div class="review-author">
+            <div class="review-avatar">SM</div>
+            <div>
+              <div class="review-author-name">Sneha Mehta</div>
+              <div class="review-author-source">Zomato Review</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"As a pure vegetarian, I was blown away by the paneer tikka and dal makhani. Finally a place that treats veg food with the same love. 10/10!"</p>
+          <div class="review-author">
+            <div class="review-avatar">AJ</div>
+            <div>
+              <div class="review-author-name">Ankita Joshi</div>
+              <div class="review-author-source">Google Reviews</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="review-card">
+          <div class="review-stars">★★★★☆</div>
+          <p class="review-text">"Had a birthday celebration here. The staff was incredibly welcoming. The food was exceptional — especially the kebab platter. Highly recommended!"</p>
+          <div class="review-author">
+            <div class="review-avatar">VK</div>
+            <div>
+              <div class="review-author-name">Vikas Kumar</div>
+              <div class="review-author-source">Swiggy Review</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"The masala chai here is unmatched! Perfect blend of spices. I come here just for the chai and end up ordering a full meal every single time. 🫶"</p>
+          <div class="review-author">
+            <div class="review-avatar">PD</div>
+            <div>
+              <div class="review-author-name">Priya Deshmukh</div>
+              <div class="review-author-source">Instagram DM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="section section-cream" id="location">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Visit Us</div>
+        <h2 class="section-title">Find Your Way Here</h2>
+      </div>
+      
+      <div class="location-grid reveal">
+        <div class="location-info">
+          <h3>Spice Route — Koregaon Park</h3>
+          <div class="location-detail">
+            <div class="location-detail-icon">📍</div>
+            <div class="location-detail-text">
+              <h4>Address</h4>
+              <p>Ramnagar, Betim, Bardez,<br>North Goa, India</p>
+            </div>
+          </div>
+          <div class="location-detail">
+            <div class="location-detail-icon">🕐</div>
+            <div class="location-detail-text">
+              <h4>Opening Hours</h4>
+              <p>Monday – Sunday: 11:00 AM – 11:00 PM<br>Kitchen closes at 10:30 PM</p>
+            </div>
+          </div>
+          <div class="location-detail">
+            <div class="location-detail-icon">📞</div>
+            <div class="location-detail-text">
+              <h4>Call Us</h4>
+              <p>7385693147</p>
+            </div>
+          </div>
+          <div class="location-detail">
+            <div class="location-detail-icon">🅿️</div>
+            <div class="location-detail-text">
+              <h4>Parking</h4>
+              <p>Free parking available for 30+ vehicles.<br>Valet parking on weekends.</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xl);">
+            <a href="tel:7385693147" class="btn btn-primary btn-sm">📞 Call Now</a>
+            <a href="#" class="btn btn-whatsapp btn-sm" onclick="orderWhatsApp()">💬 WhatsApp</a>
+          </div>
+        </div>
+        
+        <div class="location-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.065!2d73.89!3d18.536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDMyJzEwLjAiTiA3M8KwNTMnMjQuMCJF!5e0!3m2!1sen!2sin!4v1600000000000" allowfullscreen="" loading="lazy" title="Spice Route Location on Google Maps"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>🔥 Craving Something Delicious?</h2>
+      <p>Order now and get 15% off on your first WhatsApp order. Use code: <strong>SPICE15</strong></p>
+      <div class="btn-group">
+        <a href="#" class="btn btn-lg" style="background:#fff; color: var(--color-primary);" onclick="orderWhatsApp()">
+          💬 Order on WhatsApp
+        </a>
+        <a href="reservation.html" class="btn btn-secondary btn-lg">
+          🪑 Reserve a Table
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom: var(--space-sm);">
+            <div class="nav-logo-icon">🍛</div>
+            <div class="nav-logo-text">Spice<span>Route</span></div>
+          </a>
+          <p>Where tradition meets innovation. Serving authentic Indian flavors with modern flair since 2010.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">📸</a>
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="YouTube">🎬</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+          </div>
+        </div>
+        
+        <div>
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Our Menu</a>
+            <a href="about.html">About Us</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="reservation.html">Reservations</a>
+          </div>
+        </div>
+        
+        <div>
+          <h4>Top Dishes</h4>
+          <div class="footer-links">
+            <a href="menu.html">Butter Chicken</a>
+            <a href="menu.html">Hyderabadi Biryani</a>
+            <a href="menu.html">Paneer Tikka</a>
+            <a href="menu.html">Dal Makhani</a>
+            <a href="menu.html">Tandoori Platter</a>
+            <a href="menu.html">Gulab Jamun</a>
+          </div>
+        </div>
+        
+        <div>
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item">📍 Ramnagar, Betim, Bardez, North Goa, India</div>
+          <div class="footer-contact-item">📞 7385693147</div>
+          <div class="footer-contact-item">📧 digitquo@gmail.com</div>
+          <div class="footer-contact-item">🕐 11 AM – 11 PM (All days)</div>
+          <a href="#" class="btn btn-whatsapp btn-sm" style="margin-top: var(--space-md);" onclick="orderWhatsApp()">💬 WhatsApp Us</a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2024 Spice Route. All rights reserved.<br>Made by Ebrahim Sekh from DigitQuo</p>
+        <p>
+          <a href="#" style="color: rgba(255,248,240,0.5);">Privacy Policy</a> · 
+          <a href="#" style="color: rgba(255,248,240,0.5);">Terms of Service</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="#" class="whatsapp-float" id="whatsappFloat" onclick="orderWhatsApp()" aria-label="Order on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- Offer Banner -->
+  <div class="offer-banner" id="offerBanner">
+    <div class="container">
+      <p>🔥 <strong>Limited Offer:</strong> Flat 15% off on your first WhatsApp order! Use code <strong>SPICE15</strong> — <a href="#" style="color: var(--color-primary-light); text-decoration: underline;" onclick="orderWhatsApp()">Order Now</a></p>
+    </div>
+    <button class="offer-banner-close" onclick="document.getElementById('offerBanner').classList.remove('visible')">✕</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

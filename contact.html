@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Spice Route — find our location on Google Maps, call us, WhatsApp us, or visit us at Koregaon Park, Pune. Free parking available.">
+  <title>Contact Us — Spice Route | Visit, Call, or WhatsApp</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍛</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">🍛</div>
+        <div class="nav-logo-text">Spice<span>Route</span></div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="reservation.html" class="btn btn-primary btn-sm nav-cta">Reserve Table</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="reservation.html">Reserve Table</a>
+  </div>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <div class="section-eyebrow" style="color: var(--color-primary-light);">Get in Touch</div>
+      <h1>Contact Us</h1>
+      <p>We'd love to hear from you. Reach out for orders, feedback, or just to say hi!</p>
+    </div>
+  </header>
+
+  <!-- Contact Content -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid reveal">
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <h2 style="font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: var(--space-sm); color: var(--color-charcoal);">Send Us a Message</h2>
+          <p style="color: var(--color-text-muted); margin-bottom: var(--space-2xl); font-size: 0.92rem;">Got feedback, a special request, or a catering inquiry? Fill in the form below.</p>
+
+          <form id="contactForm" onsubmit="handleContactSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Your Name *</label>
+                <input type="text" id="contact-name" placeholder="e.g. Rahul Sharma" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-phone">Phone Number *</label>
+                <input type="tel" id="contact-phone" placeholder="7385693147" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" placeholder="rahul@example.com">
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <select id="contact-subject">
+                <option value="">Select a topic...</option>
+                <option value="feedback">Feedback</option>
+                <option value="catering">Catering Inquiry</option>
+                <option value="partnership">Partnership / Collaboration</option>
+                <option value="complaint">Complaint</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Your Message *</label>
+              <textarea id="contact-message" placeholder="Tell us what's on your mind..." rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Send Message ✉️</button>
+          </form>
+
+          <div id="contactSuccess" style="display: none; text-align: center; padding: var(--space-2xl);">
+            <div style="font-size: 3rem; margin-bottom: var(--space-md);">✅</div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: var(--space-sm);">Message Sent!</h3>
+            <p style="color: var(--color-text-muted);">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+          </div>
+        </div>
+
+        <!-- Contact Info Cards -->
+        <div class="contact-info-cards">
+          <a href="tel:7385693147" class="contact-info-card">
+            <div class="contact-info-icon">📞</div>
+            <div>
+              <h4>Call Us</h4>
+              <p>7385693147<br><small style="color: var(--color-text-muted);">Available 10 AM – 11 PM</small></p>
+            </div>
+          </a>
+
+          <a href="#" class="contact-info-card" onclick="orderWhatsApp()">
+            <div class="contact-info-icon">💬</div>
+            <div>
+              <h4>WhatsApp</h4>
+              <p>7385693147<br><small style="color: var(--color-text-muted);">Quick response & orders</small></p>
+            </div>
+          </a>
+
+          <a href="mailto:digitquo@gmail.com" class="contact-info-card">
+            <div class="contact-info-icon">📧</div>
+            <div>
+              <h4>Email</h4>
+              <p>digitquo@gmail.com<br><small style="color: var(--color-text-muted);">For partnerships & media</small></p>
+            </div>
+          </a>
+
+          <div class="contact-info-card">
+            <div class="contact-info-icon">📍</div>
+            <div>
+              <h4>Visit Us</h4>
+              <p>Ramnagar, Betim, Bardez,<br>North Goa, India</p>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="contact-info-icon">🕐</div>
+            <div>
+              <h4>Opening Hours</h4>
+              <p>Monday – Sunday<br>11:00 AM – 11:00 PM</p>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="contact-info-icon">🅿️</div>
+            <div>
+              <h4>Parking</h4>
+              <p>Free parking for 30+ vehicles.<br>Valet service on weekends.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="section section-cream" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Location</div>
+        <h2 class="section-title">Find Us on the Map</h2>
+      </div>
+      <div class="location-map reveal" style="height: 450px; border-radius: var(--radius-lg); overflow: hidden;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.065!2d73.89!3d18.536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDMyJzEwLjAiTiA3M8KwNTMnMjQuMCJF!5e0!3m2!1sen!2sin!4v1600000000000" allowfullscreen="" loading="lazy" title="Spice Route Location"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom: var(--space-sm);">
+            <div class="nav-logo-icon">🍛</div>
+            <div class="nav-logo-text">Spice<span>Route</span></div>
+          </a>
+          <p>Where tradition meets innovation. Serving authentic Indian flavors with modern flair since 2010.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">📸</a>
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="YouTube">🎬</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Our Menu</a>
+            <a href="about.html">About Us</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="reservation.html">Reservations</a>
+          </div>
+        </div>
+        <div>
+          <h4>Top Dishes</h4>
+          <div class="footer-links">
+            <a href="menu.html">Butter Chicken</a>
+            <a href="menu.html">Hyderabadi Biryani</a>
+            <a href="menu.html">Paneer Tikka</a>
+            <a href="menu.html">Dal Makhani</a>
+            <a href="menu.html">Gulab Jamun</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item">📍 Ramnagar, Betim, Bardez, North Goa, India</div>
+          <div class="footer-contact-item">📞 7385693147</div>
+          <div class="footer-contact-item">📧 digitquo@gmail.com</div>
+          <div class="footer-contact-item">🕐 11 AM – 11 PM (All days)</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Spice Route. All rights reserved.<br>Made by Ebrahim Sekh from DigitQuo</p>
+        <p><a href="#" style="color: rgba(255,248,240,0.5);">Privacy Policy</a> · <a href="#" style="color: rgba(255,248,240,0.5);">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="whatsapp-float" onclick="orderWhatsApp()" aria-label="Order on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

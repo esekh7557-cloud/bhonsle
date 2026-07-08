@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse the Spice Route gallery — stunning food photography, restaurant interiors, and the vibrant dining atmosphere of Pune's favorite Indian restaurant.">
+  <title>Gallery — Spice Route | Food & Ambiance</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍛</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">🍛</div>
+        <div class="nav-logo-text">Spice<span>Route</span></div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="reservation.html" class="btn btn-primary btn-sm nav-cta">Reserve Table</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="reservation.html">Reserve Table</a>
+  </div>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <div class="section-eyebrow" style="color: var(--color-primary-light);">Visual Feast</div>
+      <h1>Our Gallery</h1>
+      <p>A visual journey through our dishes, kitchen, and dining experience.</p>
+    </div>
+  </header>
+
+  <!-- Gallery Filter -->
+  <div class="menu-filters">
+    <div class="container" style="display: flex; justify-content: center; gap: var(--space-sm); flex-wrap: wrap;">
+      <button class="filter-btn active" data-gallery-filter="all">All</button>
+      <button class="filter-btn" data-gallery-filter="food">🍽️ Food</button>
+      <button class="filter-btn" data-gallery-filter="interior">🏠 Interior</button>
+      <button class="filter-btn" data-gallery-filter="moments">📸 Moments</button>
+    </div>
+  </div>
+
+  <!-- Gallery Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="gallery-grid" id="galleryGrid">
+
+        <div class="gallery-item tall" data-gallery-type="food">
+          <img src="images/butter-chicken.png" alt="Butter Chicken — Our legendary signature dish" loading="lazy">
+          <div class="gallery-item-overlay">
+            <p>🔥 Butter Chicken — Our #1 Bestseller</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-gallery-type="food">
+          <img src="images/biryani.png" alt="Hyderabadi Dum Biryani" loading="lazy">
+          <div class="gallery-item-overlay">
+            <p>Hyderabadi Dum Biryani</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-gallery-type="interior">
+          <img src="images/hero-food.png" alt="Spice Route dining atmosphere" loading="lazy">
+          <div class="gallery-item-overlay">
+            <p>The Spice Route Experience</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-gallery-type="food">
+          <img src="images/paneer-tikka.png" alt="Tandoori Paneer Tikka" loading="lazy">
+          <div class="gallery-item-overlay">
+            <p>Tandoori Paneer Tikka</p>
+          </div>
+        </div>
+
+        <div class="gallery-item wide" data-gallery-type="interior">
+          <img src="images/hero-food.png" alt="Spice Route restaurant interior" loading="lazy">
+          <div class="gallery-item-overlay">
+            <p>🏠 Warm, Inviting Interiors</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-gallery-type="food">
+          <img src="images/masala-chai.png" alt="Masala Chai" loading="lazy">
+          <div class="gallery-item-overlay">
+            <p>☕ Masala Chai — Soul in a Cup</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-gallery-type="food">
+          <img src="images/gulab-jamun.png" alt="Gulab Jamun dessert" loading="lazy">
+          <div class="gallery-item-overlay">
+            <p>🍮 Gulab Jamun</p>
+          </div>
+        </div>
+
+        <div class="gallery-item tall" data-gallery-type="moments">
+          <img src="images/biryani.png" alt="Guest celebrations at Spice Route" loading="lazy">
+          <div class="gallery-item-overlay">
+            <p>🎉 Celebrations & Memories</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-gallery-type="food">
+          <img src="images/butter-chicken.png" alt="Dal Makhani" loading="lazy">
+          <div class="gallery-item-overlay">
+            <p>Dal Makhani — 12-Hour Slow Cook</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-gallery-type="moments">
+          <img src="images/paneer-tikka.png" alt="Live tandoor cooking" loading="lazy">
+          <div class="gallery-item-overlay">
+            <p>🔥 Live Tandoor in Action</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-gallery-type="interior">
+          <img src="images/masala-chai.png" alt="Cozy corner seating" loading="lazy">
+          <div class="gallery-item-overlay">
+            <p>Our Cozy Chai Corner</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-gallery-type="food">
+          <img src="images/gulab-jamun.png" alt="Rasmalai dessert close-up" loading="lazy">
+          <div class="gallery-item-overlay">
+            <p>🍮 Rasmalai — Pure Bliss</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Follow Us on Instagram 📸</h2>
+      <p>Daily food shots, behind-the-scenes reels, and exclusive offers.</p>
+      <div class="btn-group">
+        <a href="#" class="btn btn-lg" style="background:#fff; color: var(--color-primary);">📸 @spiceroute.pune</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">✕</button>
+    <img src="" alt="Full-size gallery image" id="lightboxImg">
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom: var(--space-sm);">
+            <div class="nav-logo-icon">🍛</div>
+            <div class="nav-logo-text">Spice<span>Route</span></div>
+          </a>
+          <p>Where tradition meets innovation. Serving authentic Indian flavors with modern flair since 2010.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">📸</a>
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="YouTube">🎬</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Our Menu</a>
+            <a href="about.html">About Us</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="reservation.html">Reservations</a>
+          </div>
+        </div>
+        <div>
+          <h4>Top Dishes</h4>
+          <div class="footer-links">
+            <a href="menu.html">Butter Chicken</a>
+            <a href="menu.html">Hyderabadi Biryani</a>
+            <a href="menu.html">Paneer Tikka</a>
+            <a href="menu.html">Dal Makhani</a>
+            <a href="menu.html">Gulab Jamun</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item">📍 Ramnagar, Betim, Bardez, North Goa, India</div>
+          <div class="footer-contact-item">📞 7385693147</div>
+          <div class="footer-contact-item">📧 digitquo@gmail.com</div>
+          <div class="footer-contact-item">🕐 11 AM – 11 PM (All days)</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Spice Route. All rights reserved.<br>Made by Ebrahim Sekh from DigitQuo</p>
+        <p><a href="#" style="color: rgba(255,248,240,0.5);">Privacy Policy</a> · <a href="#" style="color: rgba(255,248,240,0.5);">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="whatsapp-float" onclick="orderWhatsApp()" aria-label="Order on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

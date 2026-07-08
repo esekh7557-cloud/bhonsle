@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the full menu at Spice Route — Starters, Main Course, Biryani, Beverages & Desserts. Veg & Non-Veg options available. Order via WhatsApp.">
+  <title>Menu — Spice Route | Authentic Indian Cuisine</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍛</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">🍛</div>
+        <div class="nav-logo-text">Spice<span>Route</span></div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="reservation.html" class="btn btn-primary btn-sm nav-cta">Reserve Table</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav-mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="reservation.html">Reserve Table</a>
+  </div>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <div class="section-eyebrow" style="color: var(--color-primary-light);">Our Menu</div>
+      <h1>Explore Our Flavors</h1>
+      <p>From hearty starters to divine desserts — every dish is a celebration of spices.</p>
+    </div>
+  </header>
+
+  <!-- Filters -->
+  <div class="menu-filters" id="menuFilters">
+    <div class="container" style="display: flex; justify-content: center; gap: var(--space-sm); flex-wrap: wrap;">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="veg">🟢 Veg</button>
+      <button class="filter-btn" data-filter="nonveg">🔴 Non-Veg</button>
+      <button class="filter-btn" data-filter="starters">Starters</button>
+      <button class="filter-btn" data-filter="mains">Main Course</button>
+      <button class="filter-btn" data-filter="beverages">Beverages</button>
+      <button class="filter-btn" data-filter="desserts">Desserts</button>
+      <button class="filter-btn" data-filter="spicy">🌶️ Spicy</button>
+    </div>
+  </div>
+
+  <!-- Menu Content -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Starters -->
+      <div class="menu-category" data-category="starters">
+        <h2 class="menu-category-title"><span>🍢</span> Starters</h2>
+        <div class="menu-full-grid">
+          
+          <div class="menu-item" data-type="nonveg" data-spicy="true">
+            <div class="menu-item-img">
+              <img src="images/paneer-tikka.png" alt="Chicken Tikka" loading="lazy">
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <div class="nonveg-icon"></div>
+                <span class="menu-item-name">Chicken Tikka</span>
+              </div>
+              <p class="menu-item-desc">Juicy chicken chunks marinated in yoghurt and spices, grilled to perfection in tandoor.</p>
+              <div class="menu-item-bottom">
+                <span class="menu-item-price">₹299</span>
+                <div class="menu-item-tags">
+                  <span class="tag tag-popular">🔥 Popular</span>
+                  <span class="tag tag-spicy">🌶️ Spicy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-type="veg">
+            <div class="menu-item-img">
+              <img src="images/paneer-tikka.png" alt="Paneer Tikka" loading="lazy">
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <div class="veg-icon"></div>
+                <span class="menu-item-name">Paneer Tikka</span>
+              </div>
+              <p class="menu-item-desc">Charcoal-grilled cottage cheese with bell peppers, marinated in tandoori spices.</p>
+              <div class="menu-item-bottom">
+                <span class="menu-item-price">₹329</span>
+                <div class="menu-item-tags">
+                  <span class="tag tag-chef">⭐ Chef's Pick</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-type="veg" data-spicy="true">
+            <div class="menu-item-img">
+              <img src="images/paneer-tikka.png" alt="Hara Bhara Kebab" loading="lazy">
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <div class="veg-icon"></div>
+                <span class="menu-item-name">Hara Bhara Kebab</span>
+              </div>
+              <p class="menu-item-desc">Crispy spinach and potato kebabs with green chutney. A vegetarian delicacy.</p>
+              <div class="menu-item-bottom">
+                <span class="menu-item-price">₹249</span>
+                <div class="menu-item-tags">
+                  <span class="tag tag-popular">🔥 Popular</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-type="nonveg">
+            <div class="menu-item-img">
+              <img src="images/butter-chicken.png" alt="Seekh Kebab" loading="lazy">
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <div class="nonveg-icon"></div>
+                <span class="menu-item-name">Mutton Seekh Kebab</span>
+              </div>
+              <p class="menu-item-desc">Minced lamb on skewers, seasoned with aromatic spices and char-grilled. Served with roomali roti.</p>
+              <div class="menu-item-bottom">
+                <span class="menu-item-price">₹379</span>
+                <div class="menu-item-tags">
+                  <span class="tag tag-spicy">🌶️ Spicy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-type="veg">
+            <div class="menu-item-img">
+              <img src="images/paneer-tikka.png" alt="Crispy Corn" loading="lazy">
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <div class="veg-icon"></div>
+                <span class="menu-item-name">Crispy Corn Salt & Pepper</span>
+              </div>
+              <p class="menu-item-desc">Golden fried corn kernels tossed with curry leaves, green chillies, and garlic.</p>
+              <div class="menu-item-bottom">
+                <span class="menu-item-price">₹199</span>
+                <div class="menu-item-tags"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-type="nonveg" data-spicy="true">
+            <div class="menu-item-img">
+              <img src="images/butter-chicken.png" alt="Tandoori Chicken" loading="lazy">
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <div class="nonveg-icon"></div>
+                <span class="menu-item-name">Tandoori Chicken (Half)</span>
+              </div>
+              <p class="menu-item-desc">Classic tandoori chicken marinated for 24 hours. Smoky, juicy, and unforgettable.</p>
+              <div class="menu-item-bottom">
+                <span class="menu-item-price">₹349</span>
+                <div class="menu-item-tags">
+                  <span class="tag tag-popular">🔥 Bestseller</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Main Course -->
+      <div class="menu-category" data-category="mains">
+        <h2 class="menu-category-title"><span>🍛</span> Main Course</h2>
+        <div class="menu-full-grid">
+          
+          <div class="menu-item" data-type="nonveg">
+            <div class="menu-item-img">
+              <img src="images/butter-chicken.png" alt="Butter Chicken" loading="lazy">
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <div class="nonveg-icon"></div>
+                <span class="menu-item-name">Butter Chicken</span>
+              </div>
+              <p class="menu-item-desc">Creamy tomato-butter gravy with tender chicken pieces. Our legendary signature dish.</p>
+              <div class="menu-item-bottom">
+                <span class="menu-item-price">₹399</span>
+                <div class="menu-item-tags">
+                  <span class="tag tag-popular">🔥 #1 Bestseller</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-type="nonveg" data-spicy="true">
+            <div class="menu-item-img">
+              <img src="images/biryani.png" alt="Hyderabadi Biryani" loading="lazy">
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <div class="nonveg-icon"></div>
+                <span class="menu-item-name">Hyderabadi Dum Biryani</span>
+              </div>
+              <p class="menu-item-desc">Slow-cooked basmati with tender meat, saffron, and secret spice blend. Sealed with dough.</p>
+              <div class="menu-item-bottom">
+                <span class="menu-item-price">₹449</span>
+                <div class="menu-item-tags">
+                  <span class="tag tag-popular">🔥 Bestseller</span>
+                  <span class="tag tag-spicy">🌶️</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-type="veg">
+            <div class="menu-item-img">
+              <img src="images/paneer-tikka.png" alt="Paneer Butter Masala" loading="lazy">
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <div class="veg-icon"></div>
+                <span class="menu-item-name">Paneer Butter Masala</span>
+              </div>
+              <p class="menu-item-desc">Soft paneer cubes in a luscious tomato-cream gravy with a hint of kasuri methi.</p>
+              <div class="menu-item-bottom">
+                <span class="menu-item-price">₹349</span>
+                <div class="menu-item-tags">
+                  <span class="tag tag-popular">🔥 Popular</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-type="veg">
+            <div class="menu-item-img">
+              <img src="images/butter-chicken.png" alt="Dal Makhani" loading="lazy">
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <div class="veg-icon"></div>
+                <span class="menu-item-name">Dal Makhani</span>
+              </div>
+              <p class="menu-item-desc">Black lentils slow-cooked for 12 hours with butter and cream. Rich, velvety, and soulful.</p>
+              <div class="menu-item-bottom">
+                <span class="menu-item-price">₹299</span>
+                <div class="menu-item-tags">
+                  <span class="tag tag-chef">⭐ Chef's Pick</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-type="nonveg" data-spicy="true">
+            <div class="menu-item-img">
+              <img src="images/butter-chicken.png" alt="Mutton Rogan Josh" loading="lazy">
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <div class="nonveg-icon"></div>
+                <span class="menu-item-name">Mutton Rogan Josh</span>
+              </div>
+              <p class="menu-item-desc">Kashmiri style slow-cooked mutton in a rich, aromatic sauce with fennel and dried ginger.</p>
+              <div class="menu-item-bottom">
+                <span class="menu-item-price">₹499</span>
+                <div class="menu-item-tags">
+                  <span class="tag tag-spicy">🌶️ Spicy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-type="veg">
+            <div class="menu-item-img">
+              <img src="images/paneer-tikka.png" alt="Veg Biryani" loading="lazy">
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <div class="veg-icon"></div>
+                <span class="menu-item-name">Vegetable Biryani</span>
+              </div>
+              <p class="menu-item-desc">Fragrant basmati rice with mixed vegetables, saffron, and aromatic spices. Dum-cooked.</p>
+              <div class="menu-item-bottom">
+                <span class="menu-item-price">₹329</span>
+                <div class="menu-item-tags"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Beverages -->
+      <div class="menu-category" data-category="beverages">
+        <h2 class="menu-category-title"><span>🥤</span> Beverages</h2>
+        <div class="menu-full-grid">
+          
+          <div class="menu-item" data-type="veg">
+            <div class="menu-item-img">
+              <img src="images/masala-chai.png" alt="Masala Chai" loading="lazy">
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <div class="veg-icon"></div>
+                <span class="menu-item-name">Masala Chai</span>
+              </div>
+              <p class="menu-item-desc">Traditional Indian spiced tea with cardamom, ginger, and cinnamon. Soul in a cup.</p>
+              <div class="menu-item-bottom">
+                <span class="menu-item-price">₹79</span>
+                <div class="menu-item-tags">
+                  <span class="tag tag-popular">🔥 Popular</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-type="veg">
+            <div class="menu-item-img">
+              <img src="images/masala-chai.png" alt="Mango Lassi" loading="lazy">
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <div class="veg-icon"></div>
+                <span class="menu-item-name">Mango Lassi</span>
+              </div>
+              <p class="menu-item-desc">Thick, creamy yoghurt shake blended with fresh Alphonso mango pulp. Refreshing!</p>
+              <div class="menu-item-bottom">
+                <span class="menu-item-price">₹149</span>
+                <div class="menu-item-tags">
+                  <span class="tag tag-chef">⭐ Must Try</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-type="veg">
+            <div class="menu-item-img">
+              <img src="images/masala-chai.png" alt="Fresh Lime Soda" loading="lazy">
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <div class="veg-icon"></div>
+                <span class="menu-item-name">Fresh Lime Soda</span>
+              </div>
+              <p class="menu-item-desc">Refreshing lime juice with soda, mint, and a pinch of black salt. Sweet or salted.</p>
+              <div class="menu-item-bottom">
+                <span class="menu-item-price">₹99</span>
+                <div class="menu-item-tags"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-type="veg">
+            <div class="menu-item-img">
+              <img src="images/masala-chai.png" alt="Thandai" loading="lazy">
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <div class="veg-icon"></div>
+                <span class="menu-item-name">Thandai</span>
+              </div>
+              <p class="menu-item-desc">Traditional chilled drink with almonds, saffron, fennel seeds, and cardamom.</p>
+              <div class="menu-item-bottom">
+                <span class="menu-item-price">₹179</span>
+                <div class="menu-item-tags">
+                  <span class="tag tag-chef">⭐ Seasonal</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Desserts -->
+      <div class="menu-category" data-category="desserts">
+        <h2 class="menu-category-title"><span>🍮</span> Desserts</h2>
+        <div class="menu-full-grid">
+
+          <div class="menu-item" data-type="veg">
+            <div class="menu-item-img">
+              <img src="images/gulab-jamun.png" alt="Gulab Jamun" loading="lazy">
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <div class="veg-icon"></div>
+                <span class="menu-item-name">Gulab Jamun</span>
+              </div>
+              <p class="menu-item-desc">Soft, golden balls soaked in rose-scented sugar syrup. Garnished with saffron and pistachios.</p>
+              <div class="menu-item-bottom">
+                <span class="menu-item-price">₹149</span>
+                <div class="menu-item-tags">
+                  <span class="tag tag-popular">🔥 Bestseller</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-type="veg">
+            <div class="menu-item-img">
+              <img src="images/gulab-jamun.png" alt="Rasmalai" loading="lazy">
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <div class="veg-icon"></div>
+                <span class="menu-item-name">Rasmalai</span>
+              </div>
+              <p class="menu-item-desc">Soft cottage cheese discs soaked in saffron-infused sweetened milk with crushed pistachios.</p>
+              <div class="menu-item-bottom">
+                <span class="menu-item-price">₹179</span>
+                <div class="menu-item-tags">
+                  <span class="tag tag-chef">⭐ Chef's Pick</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-item" data-type="veg">
+            <div class="menu-item-img">
+              <img src="images/gulab-jamun.png" alt="Kulfi" loading="lazy">
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <div class="veg-icon"></div>
+                <span class="menu-item-name">Malai Kulfi</span>
+              </div>
+              <p class="menu-item-desc">Traditional Indian ice cream made with reduced milk, cardamom, and dry fruits. Slow-frozen.</p>
+              <div class="menu-item-bottom">
+                <span class="menu-item-price">₹129</span>
+                <div class="menu-item-tags"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WhatsApp Order CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Ready to Order? 🛒</h2>
+      <p>Send your order via WhatsApp and get it delivered fresh to your doorstep.</p>
+      <div class="btn-group">
+        <a href="#" class="btn btn-lg" style="background:#fff; color: var(--color-primary);" onclick="orderWhatsApp()">
+          💬 Order on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom: var(--space-sm);">
+            <div class="nav-logo-icon">🍛</div>
+            <div class="nav-logo-text">Spice<span>Route</span></div>
+          </a>
+          <p>Where tradition meets innovation. Serving authentic Indian flavors with modern flair since 2010.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">📸</a>
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="YouTube">🎬</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Our Menu</a>
+            <a href="about.html">About Us</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="reservation.html">Reservations</a>
+          </div>
+        </div>
+        <div>
+          <h4>Top Dishes</h4>
+          <div class="footer-links">
+            <a href="#">Butter Chicken</a>
+            <a href="#">Hyderabadi Biryani</a>
+            <a href="#">Paneer Tikka</a>
+            <a href="#">Dal Makhani</a>
+            <a href="#">Gulab Jamun</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item">📍 Ramnagar, Betim, Bardez, North Goa, India</div>
+          <div class="footer-contact-item">📞 7385693147</div>
+          <div class="footer-contact-item">📧 digitquo@gmail.com</div>
+          <div class="footer-contact-item">🕐 11 AM – 11 PM (All days)</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Spice Route. All rights reserved.<br>Made by Ebrahim Sekh from DigitQuo</p>
+        <p><a href="#" style="color: rgba(255,248,240,0.5);">Privacy Policy</a> · <a href="#" style="color: rgba(255,248,240,0.5);">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="#" class="whatsapp-float" onclick="orderWhatsApp()" aria-label="Order on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

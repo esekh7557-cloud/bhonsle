@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reserve your table at Spice Route, Pune. Book online or via WhatsApp for a memorable Indian dining experience. Walk-ins welcome.">
+  <title>Reserve a Table — Spice Route | Book Now</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍛</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">🍛</div>
+        <div class="nav-logo-text">Spice<span>Route</span></div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="reservation.html" class="btn btn-primary btn-sm nav-cta active">Reserve Table</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="reservation.html">Reserve Table</a>
+  </div>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <div class="section-eyebrow" style="color: var(--color-primary-light);">Table Booking</div>
+      <h1>Reserve Your Table</h1>
+      <p>Secure your spot for a memorable dining experience. Walk-ins are always welcome too!</p>
+    </div>
+  </header>
+
+  <!-- Reservation Content -->
+  <section class="section">
+    <div class="container">
+      <div class="reservation-wrapper reveal">
+        <!-- Reservation Form -->
+        <div class="reservation-form-box">
+          <h2>Book a Table</h2>
+          <p>Fill in the details below and we'll confirm your reservation within 30 minutes.</p>
+
+          <form id="reservationForm" onsubmit="handleReservationSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="res-name">Full Name *</label>
+                <input type="text" id="res-name" placeholder="e.g. Rahul Sharma" required>
+              </div>
+              <div class="form-group">
+                <label for="res-phone">Phone Number *</label>
+                <input type="tel" id="res-phone" placeholder="7385693147" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="res-date">Date *</label>
+                <input type="date" id="res-date" required>
+              </div>
+              <div class="form-group">
+                <label for="res-time">Time *</label>
+                <select id="res-time" required>
+                  <option value="">Select time...</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="11:30">11:30 AM</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="12:30">12:30 PM</option>
+                  <option value="13:00">1:00 PM</option>
+                  <option value="13:30">1:30 PM</option>
+                  <option value="14:00">2:00 PM</option>
+                  <option value="18:00">6:00 PM</option>
+                  <option value="18:30">6:30 PM</option>
+                  <option value="19:00">7:00 PM</option>
+                  <option value="19:30">7:30 PM</option>
+                  <option value="20:00">8:00 PM</option>
+                  <option value="20:30">8:30 PM</option>
+                  <option value="21:00">9:00 PM</option>
+                  <option value="21:30">9:30 PM</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="res-guests">Number of Guests *</label>
+                <select id="res-guests" required>
+                  <option value="">Select...</option>
+                  <option value="1">1 Guest</option>
+                  <option value="2">2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                  <option value="5">5 Guests</option>
+                  <option value="6">6 Guests</option>
+                  <option value="7-10">7-10 Guests</option>
+                  <option value="10+">10+ Guests (Large Party)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="res-occasion">Occasion</label>
+                <select id="res-occasion">
+                  <option value="casual">Casual Dining</option>
+                  <option value="birthday">Birthday</option>
+                  <option value="anniversary">Anniversary</option>
+                  <option value="business">Business Dinner</option>
+                  <option value="celebration">Family Celebration</option>
+                  <option value="date">Date Night</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="res-requests">Special Requests</label>
+              <textarea id="res-requests" placeholder="Any dietary requirements, seating preferences, or special arrangements..." rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Confirm Reservation 🪑</button>
+          </form>
+
+          <!-- Success State -->
+          <div id="reservationSuccess" style="display: none; text-align: center; padding: var(--space-3xl) var(--space-xl);">
+            <div style="font-size: 4rem; margin-bottom: var(--space-md);">🎉</div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: var(--space-sm); color: var(--color-charcoal);">Reservation Requested!</h3>
+            <p style="color: var(--color-text-muted); margin-bottom: var(--space-lg); line-height: 1.7;">Thank you! We'll confirm your booking via WhatsApp or call within <strong>30 minutes</strong> during operating hours.</p>
+            <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+              <a href="menu.html" class="btn btn-outline">Browse Menu While You Wait</a>
+              <a href="#" class="btn btn-whatsapp" onclick="orderWhatsApp()">💬 Chat with Us</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="reservation-sidebar">
+          <!-- Quick WhatsApp Book -->
+          <div class="reservation-quick-book">
+            <h3>⚡ Prefer WhatsApp?</h3>
+            <p>Book instantly by sending us a message. No forms, no waiting.</p>
+            <a href="#" class="btn btn-lg" style="background: #fff; color: var(--color-primary); width: 100%;" onclick="reserveWhatsApp()">💬 Book via WhatsApp</a>
+          </div>
+
+          <!-- Info Card -->
+          <div class="reservation-info-card">
+            <h3>📋 Good to Know</h3>
+            <ul>
+              <li>🕐 We'll confirm within 30 minutes</li>
+              <li>⏰ Please arrive 10 mins before your slot</li>
+              <li>📱 We'll hold your table for 15 minutes</li>
+              <li>🅿️ Free parking available</li>
+              <li>👶 Kids are always welcome!</li>
+              <li>♿ Wheelchair accessible</li>
+              <li>🍽️ Private dining for 10+ guests</li>
+            </ul>
+          </div>
+
+          <!-- Hours Card -->
+          <div class="reservation-info-card">
+            <h3>🕐 Opening Hours</h3>
+            <ul>
+              <li>
+                <span style="flex: 1;">Lunch</span>
+                <span style="color: var(--color-primary-light);">11:00 AM – 3:00 PM</span>
+              </li>
+              <li>
+                <span style="flex: 1;">Dinner</span>
+                <span style="color: var(--color-primary-light);">6:00 PM – 11:00 PM</span>
+              </li>
+              <li>
+                <span style="flex: 1;">Kitchen Close</span>
+                <span style="color: var(--color-primary-light);">10:30 PM</span>
+              </li>
+              <li style="border: none;">
+                <span style="flex: 1;">Open</span>
+                <span style="color: var(--color-success);">All 7 Days</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Call Card -->
+          <a href="tel:7385693147" style="display: block; text-decoration: none;">
+            <div class="reservation-info-card" style="text-align: center; border: 1px solid rgba(255,255,255,0.1); transition: all var(--transition-base);">
+              <div style="font-size: 2rem; margin-bottom: var(--space-sm);">📞</div>
+              <h3 style="margin-bottom: 4px;">Call to Reserve</h3>
+              <p style="color: var(--color-primary-light); font-size: 1.1rem; font-weight: 600;">7385693147</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom: var(--space-sm);">
+            <div class="nav-logo-icon">🍛</div>
+            <div class="nav-logo-text">Spice<span>Route</span></div>
+          </a>
+          <p>Where tradition meets innovation. Serving authentic Indian flavors with modern flair since 2010.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">📸</a>
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="YouTube">🎬</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Our Menu</a>
+            <a href="about.html">About Us</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="reservation.html">Reservations</a>
+          </div>
+        </div>
+        <div>
+          <h4>Top Dishes</h4>
+          <div class="footer-links">
+            <a href="menu.html">Butter Chicken</a>
+            <a href="menu.html">Hyderabadi Biryani</a>
+            <a href="menu.html">Paneer Tikka</a>
+            <a href="menu.html">Dal Makhani</a>
+            <a href="menu.html">Gulab Jamun</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item">📍 Ramnagar, Betim, Bardez, North Goa, India</div>
+          <div class="footer-contact-item">📞 7385693147</div>
+          <div class="footer-contact-item">📧 digitquo@gmail.com</div>
+          <div class="footer-contact-item">🕐 11 AM – 11 PM (All days)</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Spice Route. All rights reserved.<br>Made by Ebrahim Sekh from DigitQuo</p>
+        <p><a href="#" style="color: rgba(255,248,240,0.5);">Privacy Policy</a> · <a href="#" style="color: rgba(255,248,240,0.5);">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="whatsapp-float" onclick="orderWhatsApp()" aria-label="Order on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
