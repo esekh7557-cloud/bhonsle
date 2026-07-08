@@ -1,10 +1,10 @@
 /* =====================================================
-   SPICE ROUTE — Interactive JavaScript
+   CAFE BHONSLE — Interactive JavaScript
    ===================================================== */
 
 // ====================== CONFIG ======================
 const WHATSAPP_NUMBER = '919876543210'; // Replace with actual number
-const RESTAURANT_NAME = 'Spice Route';
+const CAFE_NAME = 'CAFE BHONSLE';
 
 // ====================== NAVBAR ======================
 document.addEventListener('DOMContentLoaded', () => {
@@ -111,6 +111,8 @@ function initMenuFilters() {
         const isSpicy = item.dataset.spicy === 'true';
         let show = true;
 
+        const parentCategory = item.closest('.menu-category');
+
         switch (filter) {
           case 'all':
             show = true;
@@ -124,11 +126,7 @@ function initMenuFilters() {
           case 'spicy':
             show = isSpicy;
             break;
-          case 'starters':
-          case 'mains':
-          case 'beverages':
-          case 'desserts':
-            const parentCategory = item.closest('.menu-category');
+          default:
             show = parentCategory && parentCategory.dataset.category === filter;
             break;
         }
@@ -147,7 +145,7 @@ function initMenuFilters() {
 
         if (filter === 'all') {
           cat.style.display = '';
-        } else if (['starters', 'mains', 'beverages', 'desserts'].includes(filter)) {
+        } else if (cat.dataset.category === filter) {
           cat.style.display = cat.dataset.category === filter ? '' : 'none';
         } else {
           cat.style.display = hasVisible ? '' : 'none';
@@ -221,11 +219,11 @@ function orderWhatsApp(item) {
 
   if (item) {
     message = encodeURIComponent(
-      `Hi ${RESTAURANT_NAME}! 🍛\n\nI'd like to order:\n• ${item}\n\nPlease confirm availability and total.\n\nThank you!`
+      `Hi ${CAFE_NAME}! ☕\n\nI'd like to order:\n• ${item}\n\nPlease confirm availability and total.\n\nThank you!`
     );
   } else {
     message = encodeURIComponent(
-      `Hi ${RESTAURANT_NAME}! 🍛\n\nI'd like to place an order:\n\n1. \n2. \n3. \n\nDelivery Address: \n\nPlease confirm availability and total.\n\nThank you!`
+      `Hi ${CAFE_NAME}! ☕\n\nI'd like to place an order:\n\n1. \n2. \n3. \n\nDelivery Address: \n\nPlease confirm availability and total.\n\nThank you!`
     );
   }
 
@@ -235,7 +233,7 @@ function orderWhatsApp(item) {
 
 function reserveWhatsApp() {
   const message = encodeURIComponent(
-    `Hi ${RESTAURANT_NAME}! 🪑\n\nI'd like to reserve a table:\n\n📅 Date: \n🕐 Time: \n👥 Guests: \n🎉 Occasion: \n\nPlease confirm availability.\n\nThank you!`
+    `Hi ${CAFE_NAME}! 🪑\n\nI'd like to reserve a table:\n\n📅 Date: \n🕐 Time: \n👥 Guests: \n🎉 Occasion: \n\nPlease confirm availability.\n\nThank you!`
   );
 
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
@@ -287,7 +285,7 @@ function handleReservationSubmit(e) {
 
   // Also send via WhatsApp for instant confirmation
   const message = encodeURIComponent(
-    `Hi ${RESTAURANT_NAME}! 🪑\n\nNew Table Reservation:\n\n👤 Name: ${name}\n📱 Phone: ${phone}\n📅 Date: ${date}\n🕐 Time: ${time}\n👥 Guests: ${guests}\n🎉 Occasion: ${occasion}\n📝 Requests: ${requests || 'None'}\n\nPlease confirm. Thank you!`
+    `Hi ${CAFE_NAME}! 🪑\n\nNew Table Reservation:\n\n👤 Name: ${name}\n📱 Phone: ${phone}\n📅 Date: ${date}\n🕐 Time: ${time}\n👥 Guests: ${guests}\n🎉 Occasion: ${occasion}\n📝 Requests: ${requests || 'None'}\n\nPlease confirm. Thank you!`
   );
 
   // Open WhatsApp in background

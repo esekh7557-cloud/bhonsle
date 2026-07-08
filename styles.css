@@ -1,5 +1,5 @@
 /* =====================================================
-   SPICE ROUTE — Modern Indian Restaurant Design System
+   CAFE BHONSLE — Modern Cafe Design System
    ===================================================== */
 
 /* --- Google Fonts --- */
@@ -356,7 +356,7 @@ input, textarea, select {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-cream);
-  letter-spacing: -0.5px;
+  letter-spacing: 0;
 }
 
 .nav-logo-text span {
