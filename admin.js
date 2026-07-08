@@ -138,6 +138,12 @@ const Admin = {
       case 'reservations': this.renderReservations(); break;
       case 'settings': this.renderSettings(); break;
     }
+
+    // Close sidebar on mobile if open
+    const sidebar = document.getElementById('adminSidebar');
+    if (sidebar && sidebar.classList.contains('open')) {
+      sidebar.classList.remove('open');
+    }
   },
 
   // ==================== DASHBOARD ====================

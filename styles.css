@@ -3227,3 +3227,25 @@ input, textarea, select {
     align-items: flex-start;
   }
 }
+
+.admin-close-sidebar {
+  display: none;
+  background: none;
+  border: none;
+  color: rgba(255, 248, 240, 0.7);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+.admin-close-sidebar:hover {
+  color: var(--color-cream);
+  background: rgba(255, 248, 240, 0.1);
+}
+
+@media (max-width: 768px) {
+  .admin-close-sidebar {
+    display: block;
+  }
+}

@@ -37,11 +37,12 @@
 
     <!-- Sidebar -->
     <aside class="admin-sidebar" id="adminSidebar">
-      <div class="admin-sidebar-header">
+      <div class="admin-sidebar-header" style="display: flex; justify-content: space-between; align-items: center;">
         <a href="index.html" class="admin-logo">
           <span>☕</span>
           <div>CAFE <strong>BHONSLE</strong></div>
         </a>
+        <button class="admin-close-sidebar" onclick="Admin.toggleSidebar()">✕</button>
       </div>
       <nav class="admin-nav">
         <button class="admin-nav-item active" data-tab="dashboard" onclick="Admin.switchTab('dashboard')">
