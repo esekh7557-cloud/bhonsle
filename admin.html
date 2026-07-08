@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin Panel — CAFE BHONSLE</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+</head>
+<body class="admin-body">
+
+  <!-- ==================== LOGIN SCREEN ==================== -->
+  <div class="admin-login" id="loginScreen">
+    <div class="admin-login-card">
+      <div class="admin-login-logo">
+        <span class="admin-login-icon">☕</span>
+        <h1>CAFE <span>BHONSLE</span></h1>
+        <p>Admin Dashboard</p>
+      </div>
+      <form onsubmit="Admin.handleLogin(event)">
+        <div class="admin-login-field">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="Enter admin password" required autocomplete="current-password">
+        </div>
+        <div class="admin-login-error" id="loginError" style="display:none;">
+          ✕ Incorrect password. Try again.
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Sign In →</button>
+      </form>
+      <div class="admin-login-hint">Default password: <code>bhonsle2024</code></div>
+    </div>
+  </div>
+
+  <!-- ==================== DASHBOARD ==================== -->
+  <div class="admin-dashboard" id="adminDashboard" style="display:none;">
+
+    <!-- Sidebar -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="admin-sidebar-header">
+        <a href="index.html" class="admin-logo">
+          <span>☕</span>
+          <div>CAFE <strong>BHONSLE</strong></div>
+        </a>
+      </div>
+      <nav class="admin-nav">
+        <button class="admin-nav-item active" data-tab="dashboard" onclick="Admin.switchTab('dashboard')">
+          <span class="admin-nav-icon">📊</span>
+          Dashboard
+        </button>
+        <button class="admin-nav-item" data-tab="orders" onclick="Admin.switchTab('orders')">
+          <span class="admin-nav-icon">🛒</span>
+          Orders
+        </button>
+        <button class="admin-nav-item" data-tab="reservations" onclick="Admin.switchTab('reservations')">
+          <span class="admin-nav-icon">🪑</span>
+          Reservations
+        </button>
+        <button class="admin-nav-item" data-tab="settings" onclick="Admin.switchTab('settings')">
+          <span class="admin-nav-icon">⚙️</span>
+          Settings
+        </button>
+      </nav>
+      <div class="admin-sidebar-footer">
+        <button class="admin-nav-item admin-logout-btn" onclick="Admin.logout()">
+          <span class="admin-nav-icon">🚪</span>
+          Logout
+        </button>
+        <a href="index.html" class="admin-nav-item" style="text-decoration:none;">
+          <span class="admin-nav-icon">🌐</span>
+          View Website
+        </a>
+      </div>
+    </aside>
+
+    <!-- Mobile Header -->
+    <div class="admin-mobile-header">
+      <button class="admin-hamburger" onclick="Admin.toggleSidebar()">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="admin-mobile-title">☕ CAFE BHONSLE Admin</div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+
+      <!-- ===== DASHBOARD PANEL ===== -->
+      <div class="admin-panel active" id="panel-dashboard">
+        <div class="admin-panel-header">
+          <h2>Dashboard Overview</h2>
+          <span class="admin-panel-date" id="dashboardDate"></span>
+        </div>
+
+        <!-- Stat Cards -->
+        <div class="admin-stats-grid">
+          <div class="admin-stat-card stat-orders">
+            <div class="admin-stat-icon">🛒</div>
+            <div class="admin-stat-info">
+              <div class="admin-stat-value" id="statTotalOrders">0</div>
+              <div class="admin-stat-label">Total Orders</div>
+            </div>
+          </div>
+          <div class="admin-stat-card stat-pending">
+            <div class="admin-stat-icon">⏳</div>
+            <div class="admin-stat-info">
+              <div class="admin-stat-value" id="statPendingOrders">0</div>
+              <div class="admin-stat-label">Pending Orders</div>
+            </div>
+          </div>
+          <div class="admin-stat-card stat-reservations">
+            <div class="admin-stat-icon">🪑</div>
+            <div class="admin-stat-info">
+              <div class="admin-stat-value" id="statTodayReservations">0</div>
+              <div class="admin-stat-label">Today's Reservations</div>
+            </div>
+          </div>
+          <div class="admin-stat-card stat-revenue">
+            <div class="admin-stat-icon">💰</div>
+            <div class="admin-stat-info">
+              <div class="admin-stat-value" id="statRevenue">₹0</div>
+              <div class="admin-stat-label">Revenue (Completed)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3>Recent Activity</h3>
+          </div>
+          <div class="admin-card-body" id="recentActivity">
+            <div class="admin-empty">No activity yet.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== ORDERS PANEL ===== -->
+      <div class="admin-panel" id="panel-orders">
+        <div class="admin-panel-header">
+          <h2>Manage Orders</h2>
+          <div class="admin-filter-bar">
+            <select id="orderStatusFilter" onchange="Admin.renderOrders()">
+              <option value="all">All Statuses</option>
+              <option value="pending">Pending</option>
+              <option value="confirmed">Confirmed</option>
+              <option value="preparing">Preparing</option>
+              <option value="completed">Completed</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-table-wrapper">
+            <table class="admin-table" id="ordersTable">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer</th>
+                  <th>Items</th>
+                  <th>Total</th>
+                  <th>Status</th>
+                  <th>Date / Actions</th>
+                </tr>
+              </thead>
+              <tbody id="ordersTableBody">
+                <tr><td colspan="6" class="admin-empty">No orders yet</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== RESERVATIONS PANEL ===== -->
+      <div class="admin-panel" id="panel-reservations">
+        <div class="admin-panel-header">
+          <h2>Manage Reservations</h2>
+          <div class="admin-filter-bar">
+            <select id="resStatusFilter" onchange="Admin.renderReservations()">
+              <option value="all">All Statuses</option>
+              <option value="pending">Pending</option>
+              <option value="confirmed">Confirmed</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-table-wrapper">
+            <table class="admin-table" id="reservationsTable">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Guest</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Party Size</th>
+                  <th>Status</th>
+                  <th>Occasion / Actions</th>
+                </tr>
+              </thead>
+              <tbody id="reservationsTableBody">
+                <tr><td colspan="7" class="admin-empty">No reservations yet</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SETTINGS PANEL ===== -->
+      <div class="admin-panel" id="panel-settings">
+        <div class="admin-panel-header">
+          <h2>Settings</h2>
+        </div>
+
+        <div class="admin-settings-grid">
+          <!-- Change Password -->
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3>🔑 Change Password</h3>
+            </div>
+            <div class="admin-card-body">
+              <form onsubmit="Admin.changePassword(event)">
+                <div class="admin-form-group">
+                  <label>Current Password</label>
+                  <input type="password" id="currentPassword" required>
+                </div>
+                <div class="admin-form-group">
+                  <label>New Password</label>
+                  <input type="password" id="newPassword" required minlength="4">
+                </div>
+                <div class="admin-form-group">
+                  <label>Confirm New Password</label>
+                  <input type="password" id="confirmPassword" required minlength="4">
+                </div>
+                <div class="settings-msg" id="passwordMsg" style="display:none;"></div>
+                <button type="submit" class="btn btn-primary">Update Password</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Data Management -->
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3>🗃️ Data Management</h3>
+            </div>
+            <div class="admin-card-body">
+              <div class="settings-action">
+                <div>
+                  <strong>Export All Data</strong>
+                  <p>Download orders and reservations as JSON file.</p>
+                </div>
+                <button class="btn btn-outline" onclick="Admin.exportData()">📥 Export JSON</button>
+              </div>
+              <div class="settings-action">
+                <div>
+                  <strong>Clear All Orders</strong>
+                  <p>Permanently delete all order records.</p>
+                </div>
+                <button class="btn btn-danger" onclick="Admin.clearAllOrders()">🗑️ Clear Orders</button>
+              </div>
+              <div class="settings-action">
+                <div>
+                  <strong>Clear All Reservations</strong>
+                  <p>Permanently delete all reservation records.</p>
+                </div>
+                <button class="btn btn-danger" onclick="Admin.clearAllReservations()">🗑️ Clear Reservations</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+  <script>
+    // Set dashboard date
+    document.addEventListener('DOMContentLoaded', () => {
+      const dateEl = document.getElementById('dashboardDate');
+      if (dateEl) {
+        dateEl.textContent = new Date().toLocaleDateString('en-IN', {
+          weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+        });
+      }
+    });
+  </script>
+</body>
+</html>

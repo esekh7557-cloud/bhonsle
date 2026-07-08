@@ -120,9 +120,6 @@ function initMenuFilters() {
           case 'veg':
             show = type === 'veg';
             break;
-          case 'nonveg':
-            show = type === 'nonveg';
-            break;
           case 'spicy':
             show = isSpicy;
             break;
@@ -272,6 +269,18 @@ function handleReservationSubmit(e) {
   const guests = document.getElementById('res-guests').value;
   const occasion = document.getElementById('res-occasion').value;
   const requests = document.getElementById('res-requests').value;
+
+  // Save reservation to localStorage for admin panel
+  const reservation = {
+    id: 'RES-' + Date.now(),
+    name, phone, date, time, guests, occasion,
+    requests: requests || '',
+    status: 'pending',
+    createdAt: new Date().toISOString()
+  };
+  const reservations = JSON.parse(localStorage.getItem('cb_reservations') || '[]');
+  reservations.unshift(reservation);
+  localStorage.setItem('cb_reservations', JSON.stringify(reservations));
 
   // Animate form transition
   form.style.opacity = '0';
@@ -465,3 +474,203 @@ window.addEventListener('scroll', () => {
 window.addEventListener('load', () => {
   document.body.classList.add('loaded');
 });
+
+// ====================== CART & ORDER SYSTEM ======================
+const Cart = {
+  KEY: 'cb_cart',
+  ORDERS_KEY: 'cb_orders',
+
+  getItems() {
+    return JSON.parse(sessionStorage.getItem(this.KEY) || '[]');
+  },
+
+  save(items) {
+    sessionStorage.setItem(this.KEY, JSON.stringify(items));
+    this.updateBadge();
+    this.renderDrawer();
+  },
+
+  addItem(name, price) {
+    const items = this.getItems();
+    const existing = items.find(i => i.name === name);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      items.push({ name, price: parseFloat(price), qty: 1 });
+    }
+    this.save(items);
+    this.showAddedFeedback(name);
+  },
+
+  removeItem(name) {
+    let items = this.getItems();
+    items = items.filter(i => i.name !== name);
+    this.save(items);
+  },
+
+  updateQty(name, delta) {
+    const items = this.getItems();
+    const item = items.find(i => i.name === name);
+    if (!item) return;
+    item.qty += delta;
+    if (item.qty <= 0) {
+      this.save(items.filter(i => i.name !== name));
+    } else {
+      this.save(items);
+    }
+  },
+
+  getTotal() {
+    return this.getItems().reduce((sum, i) => sum + i.price * i.qty, 0);
+  },
+
+  getCount() {
+    return this.getItems().reduce((sum, i) => sum + i.qty, 0);
+  },
+
+  clear() {
+    sessionStorage.removeItem(this.KEY);
+    this.updateBadge();
+    this.renderDrawer();
+  },
+
+  updateBadge() {
+    const badge = document.getElementById('cartBadge');
+    const count = this.getCount();
+    if (badge) {
+      badge.textContent = count;
+      badge.style.display = count > 0 ? 'flex' : 'none';
+    }
+  },
+
+  showAddedFeedback(name) {
+    // Brief toast notification
+    let toast = document.getElementById('cartToast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'cartToast';
+      toast.className = 'cart-toast';
+      document.body.appendChild(toast);
+    }
+    toast.textContent = `✓ ${name} added to cart`;
+    toast.classList.add('visible');
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => toast.classList.remove('visible'), 2000);
+  },
+
+  renderDrawer() {
+    const list = document.getElementById('cartItemsList');
+    const totalEl = document.getElementById('cartTotal');
+    const emptyEl = document.getElementById('cartEmpty');
+    const contentEl = document.getElementById('cartContent');
+    if (!list) return;
+
+    const items = this.getItems();
+    if (items.length === 0) {
+      if (emptyEl) emptyEl.style.display = 'block';
+      if (contentEl) contentEl.style.display = 'none';
+      return;
+    }
+    if (emptyEl) emptyEl.style.display = 'none';
+    if (contentEl) contentEl.style.display = 'block';
+
+    list.innerHTML = items.map(item => `
+      <div class="cart-item">
+        <div class="cart-item-info">
+          <span class="cart-item-name">${item.name}</span>
+          <span class="cart-item-price">₹${item.price}</span>
+        </div>
+        <div class="cart-item-controls">
+          <button class="cart-qty-btn" onclick="Cart.updateQty('${item.name.replace(/'/g, "\\'") }', -1)">−</button>
+          <span class="cart-qty">${item.qty}</span>
+          <button class="cart-qty-btn" onclick="Cart.updateQty('${item.name.replace(/'/g, "\\'") }', 1)">+</button>
+          <button class="cart-remove-btn" onclick="Cart.removeItem('${item.name.replace(/'/g, "\\'") }')" title="Remove">✕</button>
+        </div>
+      </div>
+    `).join('');
+
+    if (totalEl) totalEl.textContent = '₹' + this.getTotal();
+  },
+
+  toggleDrawer() {
+    const drawer = document.getElementById('cartDrawer');
+    const overlay = document.getElementById('cartOverlay');
+    if (!drawer) return;
+    const isOpen = drawer.classList.contains('open');
+    if (isOpen) {
+      drawer.classList.remove('open');
+      if (overlay) overlay.classList.remove('visible');
+      document.body.style.overflow = '';
+    } else {
+      this.renderDrawer();
+      drawer.classList.add('open');
+      if (overlay) overlay.classList.add('visible');
+      document.body.style.overflow = 'hidden';
+    }
+  },
+
+  submitOrder() {
+    const items = this.getItems();
+    if (items.length === 0) return;
+
+    const nameInput = document.getElementById('orderName');
+    const phoneInput = document.getElementById('orderPhone');
+    const name = nameInput ? nameInput.value.trim() : '';
+    const phone = phoneInput ? phoneInput.value.trim() : '';
+
+    if (!name || !phone) {
+      alert('Please enter your name and phone number.');
+      return;
+    }
+
+    const order = {
+      id: 'ORD-' + Date.now(),
+      customer: { name, phone },
+      items: items.map(i => ({ name: i.name, price: i.price, qty: i.qty })),
+      total: this.getTotal(),
+      status: 'pending',
+      createdAt: new Date().toISOString()
+    };
+
+    const orders = JSON.parse(localStorage.getItem(this.ORDERS_KEY) || '[]');
+    orders.unshift(order);
+    localStorage.setItem(this.ORDERS_KEY, JSON.stringify(orders));
+
+    this.clear();
+    this.toggleDrawer();
+
+    // Show success feedback
+    this.showOrderSuccess(order.id);
+  },
+
+  showOrderSuccess(orderId) {
+    let modal = document.getElementById('orderSuccessModal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'orderSuccessModal';
+      modal.className = 'order-success-modal';
+      document.body.appendChild(modal);
+    }
+    modal.innerHTML = `
+      <div class="order-success-content">
+        <div class="order-success-icon">🎉</div>
+        <h3>Order Placed!</h3>
+        <p>Your order <strong>${orderId}</strong> has been placed successfully.</p>
+        <p class="order-success-sub">We'll confirm your order shortly.</p>
+        <button class="btn btn-primary" onclick="document.getElementById('orderSuccessModal').classList.remove('visible')">Got it!</button>
+      </div>
+    `;
+    setTimeout(() => modal.classList.add('visible'), 50);
+  }
+};
+
+// Initialize cart badge on page load
+document.addEventListener('DOMContentLoaded', () => {
+  Cart.updateBadge();
+  Cart.renderDrawer();
+});
+
+// Helper: Add to cart from menu item button
+function addToCart(name, price) {
+  Cart.addItem(name, price);
+}

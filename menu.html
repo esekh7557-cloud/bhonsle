@@ -55,7 +55,6 @@
     <div class="container" style="display: flex; justify-content: center; gap: var(--space-sm); flex-wrap: wrap;">
       <button class="filter-btn active" data-filter="all">All</button>
       <button class="filter-btn" data-filter="veg">🟢 Veg</button>
-      <button class="filter-btn" data-filter="nonveg">🔴 Non-Veg</button>
       <button class="filter-btn" data-filter="hot-coffee">Hot Coffee</button>
       <button class="filter-btn" data-filter="cold-drinks">Cold Drinks</button>
       <button class="filter-btn" data-filter="bites">Cafe Bites</button>
@@ -88,6 +87,7 @@
                   <span class="tag tag-popular">🔥 Bestseller</span>
                 </div>
               </div>
+              <button class="btn btn-order btn-sm" onclick="addToCart('Signature Cappuccino', 149)">🛒 Order</button>
             </div>
           </div>
 
@@ -107,6 +107,7 @@
                   <span class="tag tag-chef">⭐ Cafe Pick</span>
                 </div>
               </div>
+              <button class="btn btn-order btn-sm" onclick="addToCart('Cafe Latte', 159)">🛒 Order</button>
             </div>
           </div>
 
@@ -126,6 +127,7 @@
                   <span class="tag tag-popular">🔥 Popular</span>
                 </div>
               </div>
+              <button class="btn btn-order btn-sm" onclick="addToCart('Americano', 119)">🛒 Order</button>
             </div>
           </div>
 
@@ -145,6 +147,7 @@
                   <span class="tag tag-chef">⭐ Must Try</span>
                 </div>
               </div>
+              <button class="btn btn-order btn-sm" onclick="addToCart('Cafe Mocha', 179)">🛒 Order</button>
             </div>
           </div>
 
@@ -162,6 +165,7 @@
                 <span class="menu-item-price">₹89</span>
                 <div class="menu-item-tags"></div>
               </div>
+              <button class="btn btn-order btn-sm" onclick="addToCart('Masala Chai', 89)">🛒 Order</button>
             </div>
           </div>
 
@@ -181,6 +185,7 @@
                   <span class="tag tag-popular">🔥 Comfort Cup</span>
                 </div>
               </div>
+              <button class="btn btn-order btn-sm" onclick="addToCart('Hot Chocolate', 169)">🛒 Order</button>
             </div>
           </div>
 
@@ -208,25 +213,7 @@
                   <span class="tag tag-popular">🔥 #1 Bestseller</span>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div class="menu-item" data-type="nonveg">
-            <div class="menu-item-img">
-              <img src="images/cafe-sandwich.png" alt="Chicken Club Sandwich" loading="lazy">
-            </div>
-            <div class="menu-item-info">
-              <div class="menu-item-header">
-                <div class="nonveg-icon"></div>
-                <span class="menu-item-name">Chicken Club Sandwich</span>
-              </div>
-              <p class="menu-item-desc">Grilled chicken, cheese, lettuce, tomato, and smoky mayo layered in crisp toast.</p>
-              <div class="menu-item-bottom">
-                <span class="menu-item-price">₹269</span>
-                <div class="menu-item-tags">
-                  <span class="tag tag-popular">🔥 Popular</span>
-                </div>
-              </div>
+              <button class="btn btn-order btn-sm" onclick="addToCart('Grilled Paneer Sandwich', 229)">🛒 Order</button>
             </div>
           </div>
 
@@ -246,6 +233,7 @@
                   <span class="tag tag-popular">🔥 Popular</span>
                 </div>
               </div>
+              <button class="btn btn-order btn-sm" onclick="addToCart('Cheese Garlic Toast', 159)">🛒 Order</button>
             </div>
           </div>
 
@@ -265,6 +253,7 @@
                   <span class="tag tag-chef">⭐ Cafe Pick</span>
                 </div>
               </div>
+              <button class="btn btn-order btn-sm" onclick="addToCart('Veggie Wrap', 199)">🛒 Order</button>
             </div>
           </div>
 
@@ -284,6 +273,7 @@
                   <span class="tag tag-popular">🔥 Shareable</span>
                 </div>
               </div>
+              <button class="btn btn-order btn-sm" onclick="addToCart('Loaded Fries', 189)">🛒 Order</button>
             </div>
           </div>
 
@@ -301,6 +291,7 @@
                 <span class="menu-item-price">₹249</span>
                 <div class="menu-item-tags"></div>
               </div>
+              <button class="btn btn-order btn-sm" onclick="addToCart('Fruit Granola Bowl', 249)">🛒 Order</button>
             </div>
           </div>
 
@@ -328,6 +319,7 @@
                   <span class="tag tag-popular">🔥 Bestseller</span>
                 </div>
               </div>
+              <button class="btn btn-order btn-sm" onclick="addToCart('Iced Caramel Coffee', 189)">🛒 Order</button>
             </div>
           </div>
 
@@ -347,6 +339,7 @@
                   <span class="tag tag-chef">⭐ Must Try</span>
                 </div>
               </div>
+              <button class="btn btn-order btn-sm" onclick="addToCart('Cold Brew', 169)">🛒 Order</button>
             </div>
           </div>
 
@@ -364,6 +357,7 @@
                 <span class="menu-item-price">₹199</span>
                 <div class="menu-item-tags"></div>
               </div>
+              <button class="btn btn-order btn-sm" onclick="addToCart('Iced Mocha', 199)">🛒 Order</button>
             </div>
           </div>
 
@@ -383,6 +377,7 @@
                   <span class="tag tag-chef">⭐ Seasonal</span>
                 </div>
               </div>
+              <button class="btn btn-order btn-sm" onclick="addToCart('Mango Smoothie', 159)">🛒 Order</button>
             </div>
           </div>
 
@@ -410,6 +405,7 @@
                   <span class="tag tag-popular">🔥 Bestseller</span>
                 </div>
               </div>
+              <button class="btn btn-order btn-sm" onclick="addToCart('Butter Croissant', 129)">🛒 Order</button>
             </div>
           </div>
 
@@ -429,6 +425,7 @@
                   <span class="tag tag-chef">⭐ Cafe Pick</span>
                 </div>
               </div>
+              <button class="btn btn-order btn-sm" onclick="addToCart('Chocolate Croissant', 149)">🛒 Order</button>
             </div>
           </div>
 
@@ -446,6 +443,7 @@
                 <span class="menu-item-price">₹179</span>
                 <div class="menu-item-tags"></div>
               </div>
+              <button class="btn btn-order btn-sm" onclick="addToCart('Fudgy Brownie', 179)">🛒 Order</button>
             </div>
           </div>
 
@@ -520,6 +518,43 @@
       </div>
     </div>
   </footer>
+
+  <!-- Cart Overlay -->
+  <div class="cart-overlay" id="cartOverlay" onclick="Cart.toggleDrawer()"></div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h3>🛒 Your Cart</h3>
+      <button class="cart-drawer-close" onclick="Cart.toggleDrawer()">✕</button>
+    </div>
+    <div id="cartEmpty" class="cart-empty">
+      <div class="cart-empty-icon">🛒</div>
+      <p>Your cart is empty</p>
+      <span>Add items from the menu to get started!</span>
+    </div>
+    <div id="cartContent" class="cart-content" style="display:none;">
+      <div class="cart-items" id="cartItemsList"></div>
+      <div class="cart-summary">
+        <div class="cart-total-row">
+          <span>Total</span>
+          <span class="cart-total-amount" id="cartTotal">₹0</span>
+        </div>
+      </div>
+      <div class="cart-customer-info">
+        <h4>Your Details</h4>
+        <input type="text" id="orderName" placeholder="Your Name *" required>
+        <input type="tel" id="orderPhone" placeholder="Phone Number *" required>
+      </div>
+      <button class="btn btn-primary btn-lg cart-checkout-btn" onclick="Cart.submitOrder()">Place Order ✓</button>
+    </div>
+  </div>
+
+  <!-- Cart Float Button -->
+  <button class="cart-float" onclick="Cart.toggleDrawer()" aria-label="Open Cart">
+    🛒
+    <span class="cart-float-badge" id="cartBadge" style="display:none;">0</span>
+  </button>
 
   <!-- WhatsApp Float -->
   <a href="#" class="whatsapp-float" onclick="orderWhatsApp()" aria-label="Order on WhatsApp">
